@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_nav_height"
+        app:contentInsetStart="0dp"
+        app:fabCradleMargin="5dp"
+        app:fabCradleRoundedCornerRadius="10dp"
+        app:fabCradleVerticalOffset="0dp"
+        app:fabAlignmentMode="center"
+        android:layout_gravity="bottom">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            app:itemTextColor="@color/black"
+            app:labelVisibilityMode="labeled"
+            app:itemPaddingBottom="15dp"
+            app:itemPaddingTop="15dp"
+            app:itemTextAppearanceActive="@style/NavigationTextActive"
+            app:itemTextAppearanceInactive="@style/NavigationTextInactive"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/bottom_nav_menu" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:elevation="10dp"
+        android:layout_gravity="bottom|center">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNewOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabCustomSize="80dp"
+            app:elevation="2dp"
+            app:tint="@color/white"
+            android:src="@mipmap/ic_add"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/make_order" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Order"
+            android:textColor="@color/white"
+            android:layout_gravity="bottom|center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.7"
+            android:elevation="11dp"
+            android:textSize="10sp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <fragment
+        android:id="@+id/nav_host_fragment_activity_main"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        app:defaultNavHost="true"
+        android:layout_marginBottom="@dimen/bottom_nav_height"
+        app:navGraph="@navigation/mobile_navigation" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

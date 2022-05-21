@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.cardview.CircularRevealCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@color/sky_blue_light"
+    app:cardCornerRadius="16dp"
+    android:id="@+id/card"
+    android:layout_marginBottom="@dimen/home_item_margin_bottom"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="@dimen/home_item_padding_vertical">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/home_item_icon_size"
+            android:layout_height="@dimen/home_item_icon_size"
+            android:scaleType="fitCenter"
+            tools:src="@mipmap/ic_order"
+            android:layout_marginStart="@dimen/home_item_icon_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="title"
+            android:textSize="@dimen/home_item_text_size"
+            android:textStyle="bold"
+            android:textColor="@color/dark_blue"
+            android:textAllCaps="true"
+            android:layout_marginHorizontal="@dimen/home_item_icon_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintEnd_toStartOf="@id/iconNextBg"/>
+
+        <ImageView
+            android:id="@+id/iconNextBg"
+            android:layout_width="@dimen/home_item_next_size"
+            android:layout_height="@dimen/home_item_next_size"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/home_item_icon_margin"
+            android:src="@drawable/circle"
+            app:tint="@color/dark_blue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iconNext"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_next"
+            app:tint="@color/sky_blue_light"
+            app:layout_constraintStart_toStartOf="@id/iconNextBg"
+            app:layout_constraintTop_toTopOf="@id/iconNextBg"
+            app:layout_constraintBottom_toBottomOf="@id/iconNextBg"
+            app:layout_constraintEnd_toEndOf="@id/iconNextBg"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.circularreveal.cardview.CircularRevealCardView>
